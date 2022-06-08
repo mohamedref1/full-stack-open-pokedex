@@ -33,5 +33,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: samo-pokedex
           heroku_email: nulla.magister.work@gmail.com
-          healthcheck: "https:://samo-pokedex.herokuapp.com/health"
+          healthcheck: "https://samo-pokedex.herokuapp.com/health"
           checkString: "ok"
