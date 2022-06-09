@@ -73,5 +73,5 @@ jobs:
           severity: error
           text: "build failed"
           username: "mohamedref1"
-          color: "#32CD32"
+          color: "#C70039"
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
