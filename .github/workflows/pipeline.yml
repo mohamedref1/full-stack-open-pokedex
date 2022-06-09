@@ -9,11 +9,12 @@ on:
     branches: [master]
     types: [opened, synchronize]
 
+env:
+  COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
-    env:
-      COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
