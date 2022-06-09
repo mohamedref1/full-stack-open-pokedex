@@ -1,11 +1,11 @@
-name: health check
+name: Health check
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "* 21 * * *"
 
 jobs:
-  check_app_health:
+  deployed_app_health_check:
     runs-on: ubuntu-20.04
     steps:
       - name: Check the deployed service URL
