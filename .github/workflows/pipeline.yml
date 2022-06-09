@@ -60,11 +60,12 @@ jobs:
 
   discord_notification:
     if: ${{ always() }}
-    needs: [simple_deployment_pipeline, tag_release]
+    needs: [tag_release]
     runs-on: ubuntu-20.04
     steps:
+      - uses: technote-space/workflow-conclusion-action@v3
       - name: Build succeeded
-        if: ${{ success() }}
+        if: ${{ env.WORKFLOW_CONCLUSION == 'success' }}
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: info
@@ -72,7 +73,7 @@ jobs:
           color: "#32CD32"
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Build failed
-        if: ${{ failure() }}
+        if: ${{ env.WORKFLOW_CONCLUSION != 'success' }}
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: error
