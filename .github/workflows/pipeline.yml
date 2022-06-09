@@ -67,7 +67,7 @@ jobs:
           color: "#32CD32"
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Build failed
-        if: ${{ success() }}
+        if: ${{ failure() }}
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: error
