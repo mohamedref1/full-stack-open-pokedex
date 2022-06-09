@@ -33,4 +33,4 @@ The cloud-based environment is the appropriate choice If:
 - the project is in a small or medium scale software (In other words: not large-scaled).
 - the team is not big (Not more than 6 developers).
 
-since the team of the project consists of six developers, I think cloud-based environment is a good choice for CI/CD
+since the team of the project consists of six developers, I think cloud-based environment is a good choice for CI/CD.
